@@ -15,15 +15,15 @@ while (highestNumber >= lowestNumber) {
 
 // Assignment 2
 // Code snippet from bouncing ball project
-// let maxRadius = 15;
-// let colour = "red";
-// let radius = Math.floor(Math.random() * maxRadius);
-// let xVelocity = 5; // the speed of a ball on the x-axis
-// let yVelocity = 6; // the speed of a ball on the y-axis
+let maxRadius = 15;
+let colour = "red";
+let radius = Math.floor(Math.random() * maxRadius);
+let xVelocity = 5; // the speed of a ball on the x-axis
+let yVelocity = 6; // the speed of a ball on the y-axis
 
-// for (let i = 0; i < 5; i++) {
-//   createNewBall(radius, "green", xVelocity, yVelocity);
-// }
+for (let i = 0; i < 5; i++) {
+  createNewBall(radius, "green", xVelocity, yVelocity);
+}
 
 // Assignment 3
 let niceNumber = [2, 4, 8, 9, 12, 13];
