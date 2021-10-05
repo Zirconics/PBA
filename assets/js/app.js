@@ -36,7 +36,7 @@ function checkForACharacterInSentence(sentence, character) {
   let count = 0;
 
   for (let a = 0; a < sentence.length; a++) {
-    if (sentence.charAt(a) == character) {
+    if (sentence.toLowerCase().charAt(a) == character.toLowerCase()) {
       count++;
     }
   }
