@@ -2,7 +2,7 @@ console.log("JavaScript is working!");
 
 // Assignment 1
 // Call happyNewYear(year) in the console to test.
-// or enter a number(year) instead of "year"
+// or enter a number instead of a year.
 // e.g. 2014
 const year = prompt("Enter current year", "2021");
 function happyNewYear(year) {
