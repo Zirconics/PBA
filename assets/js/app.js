@@ -35,6 +35,7 @@ const character = prompt("Enter a letter to check: ");
 function checkForACharacterInSentence(sentence, character) {
   let count = 0;
 
+  // Loops through entire sentence and checks if the character is present.
   for (let a = 0; a < sentence.length; a++) {
     if (sentence.toLowerCase().charAt(a) == character.toLowerCase()) {
       count++;
