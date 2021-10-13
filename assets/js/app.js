@@ -1,83 +1,96 @@
 console.log("JavaScript is working!");
 
+/* 
+Assignment 1
+Create a function which randomly returns an element from the array lapRound
+*/
+const lapRounds = [2.99, 3.00, 3.01, 4.01, 2.79, 2.88, 3.10, 4.12];
+console.log("Assignment 1 - Random lap time: " + lapRounds[Math.floor(Math.random() * lapRounds.length)]);
 
-// Assignment 1
-// Call checkName("Alice") or checkName("Bob") in the console to check.
-let name = "Alice";
 
-function checkName(name) {
-    if (name === "Alice" || name === "Bob") {
-        return "Nice greetings!";
-    } else {
-        return "Hello";
+/*
+Assignment 2
+Given the allMyRecords array. Print all the values of this array to the console. 
+Please take into consideration that this is a 2-dimensional array and for the right answer you need to use a double loop.
+*/ 
+const allMyRecords = [
+	[
+		"The Who - Pinball Wizard", 
+		"Rolling Stones - Exile on main street", 
+		"Police - Message in a bottle"
+	],
+	[
+		"De Dijk - Alle 40 Goed", 
+		"Het Goede Doel - Belgie", 
+		"Doe Maar - skunk"
+	]
+];
+
+// Iterates through the outer array
+for (i=0; i<allMyRecords.length; i++) {
+    // Iterates through the inner arrays
+    for (j=0; j<allMyRecords[i].length; j++) {
+        console.log("Assignment 2 - Iterate 2d-array: " + allMyRecords[i][j]);
     }
 }
 
 
-// Assignment 2
-// Call checkThings(purchasedBook, job, inTrain) in the console to check.
-let purchasedBook = true;
-let job = 'teacher';
-let inTrain = true;
+/*
+Assignment 3
+Use a .filter() function to come up with the same results as the filteredLapRoundsWithForLoop() function.
 
-function checkThings(purchasedBook, job, inTrain) {
-    if (purchasedBook == true && job == 'teacher' && inTrain == true) {
-        return "Finally I can enjoy my book!";
-    } else {
-        return "Guess i'll do some work";
-    }
+function filteredLapRoundsWithForLoop() {
+	let newArray = [];
+	for(let i = 0; i < lapRounds.length; i++) 
+	{
+		if (lapRounds[i] < 4) 
+		{
+			newArray.push(lapRounds[i]);
+		}
+	}
+	return newArray;
+}
+*/
+
+// Returns everything with a value less than 4
+function filteredLapRoundsWithForLoop(value) {
+    return value < 4;
 }
 
+console.log("Assignment 3 - Filtered laps: " + lapRounds.filter(filteredLapRoundsWithForLoop));
 
-// Assignment 3
-// call checkGrade() in the console to check.
-let grade = 8;
 
-function checkGrade(grade) {
-    if (grade >= 0 && grade <= 10) {
-        if (grade < 6) {
-            return "Insufficient";
-        } else if (grade < 7) {
-            return "Sufficient";
-        } else if (grade < 9) {
-            return "Good";
-        } else {
-            return "Excellent"
-        }
-    } else {
-        return "Please enter a grade between 0 and 10."
-    }
+/*
+Assignment 4
+Use the wiki page above to learn how a BubbleSort algorithm should work. 
+Then create a function called `bubbleSort(input)` that accepts an array as `input` and returns an array containing 
+all the values of `input` but sorted in ascending order. Use the `lapRounds` array from the previous exercise to test, like:
+
+const lapRounds = [2.99, 3.00, 3.01, 4.01, 2.79, 2.88, 3.10, 4.12];
+
+function bubbleSort(input) {
+  // ...
 }
 
+// This should log: [2.79, 2.88, 2.99, 3.00, 3.01, 3.10, 4.01, 4.12]
+console.log(bubbleSort(lapRounds));
+*/
 
-// Assignment 4
-// call returnDays() in the console to check.
-let year = 2022;
-let month = 2;
-
-function returnDays(year, month) {
-    // Checks if the given year and month are valid (within the ranges of this code).
-    if (year >= 2020 && year <= 2030 && month >= 1 && month <= 12) {
-        // All leap years between 2020 and 2030.
-        if (year == 2020 || year == 2024 || year == 2028) {
-            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
-                return "Month " + month + " has 31 days";
-            } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-                return "Month " + month + " has 30 days";
-            } else if (month == 2) {
-                return "Month " + month + " has 29 days";
+function bubbleSort(input) {
+    // Loops through the entire array
+    for (i=0; i<input.length; i++){
+        for (j=0; j<input.length; j++) {
+            // Checks if the current value is higher than the next value
+            if (input[j] > input[j + 1]) {
+                // Swap the value with the next value
+                let temp = input[j];
+                input[j] = input[j + 1];
+                input[j + 1] = temp;
             }
-            // All common years between 2020 and 2030
-        } else if (year == 2021 || year == 2022 || year == 2023 || year == 2025 || year == 2026 || year == 2027 || year == 2029 || year == 2030) {
-            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
-                return "Month " + month + " has 31 days";
-            } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-                return "Month " + month + " has 30 days";
-            } else if (month == 2) {
-                return "Month " + month + " has 28 days";
-            }
         }
-    } else {
-        return "Please enter a year between 2020-2030 and a month between 1-12"
     }
-}
+    return input;
+  }
+  
+  // This should log: [2.79, 2.88, 2.99, 3.00, 3.01, 3.10, 4.01, 4.12]
+  console.log("Assignment 4 - BubbleSort array: " + bubbleSort(lapRounds));
