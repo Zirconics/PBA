@@ -175,14 +175,14 @@ const teachers = [
 
 
 function addRandomSalaryInfo(teachers) {
-    for (i = 0; i <= teachers.length; i++)
-    console.log("a" + (hoursWorked = Math.floor(Math.random() * (40 - 16) + 16)));
-    console.log("b" + (salary = Math.floor(Math.random() * (10000 - 1000) + 1000)));
-    console.log("hours " + hoursWorked + " salary: " + salary)
-    console.log();
-  }
+  teachers.forEach(function(teachers) {
+    teachers.hoursPerWeek = Math.floor(Math.random() * (40 - 16) + 16);
+    teachers.salary = salary = Math.floor(Math.random() * (10000 - 1000) + 1000);
+  });
+  console.log(teachers)
+}
 
-console.log(addRandomSalaryInfo(teachers));
+addRandomSalaryInfo(teachers)
 
 /*
 Assignment 3
