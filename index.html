@@ -4,11 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Programming basics - template</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <h1>Programming basics - template</h1>
     <p>Please open your console</p>
+    
+
+    <h1>Celcius to Fahrenheit</h1>
+    <form>
+      <label for="celcius">Enter a temperature in celcius:</label>
+      <br /><br />
+      <input name="celcius" placeholder="e.g. 21.4" id="convert-value" />
+      <br /><br />
+      <button type="button" id="convert-button">Convert</button>
+    </form>
+
+    <p>The result is: <span id="converted-value">0.0</span>F</p>
+
     <script src="./assets/js/app.js"></script>
   </body>
 </html>
