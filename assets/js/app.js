@@ -1,6 +1,40 @@
 console.log("JavaScript is working!");
 
 /*
+In Class assignments
+*/
+
+const pricingBox = document.querySelector("#pricing-box")
+const pricingBox2 = document.getElementById("pricing-box")
+const sections = document.getElementsByTagName('section')
+const tempSectionHeader = document.querySelector("#section-2 > .card-header")
+const roleItems = document.querySelectorAll("[role]")
+const storageItems = document.querySelectorAll("li[data-description-value='storage']")
+
+
+console.log(pricingBox.innerHTML)
+console.log(pricingBox.textContent)
+
+for (i=0; i<storageItems.length; i++) {
+  console.log(storageItems[i].textContent)
+}
+
+const paragraph = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt \
+  iste magni veniam pariatur incidunt esse dolore molestiae impedit, id natus est modi \
+  eveniet maiores obcaecati optio dolores iure repellendus unde?";
+const assignment4 = document.querySelector("#pricing-box > .fs-5")
+assignment4.textContent = paragraph;
+
+console.log(assignment4)
+
+const toBeDeleted = document.getElementById("section-1").closest("div > div").remove()
+console.log(toBeDeleted)
+
+
+/*
+Feedback assignments
+
+
 Assignment 1
 Given is this table. 
 - Using JavaScript, calculate the average of all the grades from the different courses.
