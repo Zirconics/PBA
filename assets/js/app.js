@@ -107,16 +107,16 @@ let drivers = [
   },
 ];
 
-// function averageLapTime(drivers) {
-//     // Loops through the drivers array.
-//   for (i = 0; i <= drivers.length; i++) {
-//       // calculates the sum of all laps, then it calculates the average lap
-//     let avgTime = drivers[i].name + ": " + drivers[i].laptimes.reduce((previousValue, currentValue) => previousValue + currentValue) / drivers[i].laptimes.length;
-//     console.log(avgTime);
-//   }
-// }
-
+function averageLapTime(drivers) {
+    // Loops through the drivers array.
+  for (i = 0; i <= drivers.length; i++) {
+      // calculates the sum of all laps, then it calculates the average lap
+    let avgTime = drivers[i].name + ": " + drivers[i].laptimes.reduce((previousValue, currentValue) => previousValue + currentValue) / drivers[i].laptimes.length;
+    console.log(avgTime);
+  }
+}
 // console.log(averageLapTime(drivers));
+
 
 /*
 Assignment 2
@@ -164,13 +164,12 @@ const teachers = [
   },
 ];
 
-// function logProfessions(teachers) {
-// // Loops through the teacher array.
-//   for (i = 0; i <= teachers.length; i++)
-//   // Prints all the data for each item.
-//     console.log(`${teachers[i].name} has a profession as a ${teachers[i].profession} and he likes to work on a ${teachers[i].brand} computer`);
-// }
-
+function logProfessions(teachers) {
+// Loops through the teacher array.
+  for (i = 0; i <= teachers.length; i++)
+  // Prints all the data for each item.
+    console.log(`${teachers[i].name} has a profession as a ${teachers[i].profession} and he likes to work on a ${teachers[i].brand} computer`);
+}
 // console.log(logProfessions(teachers))
 
 
@@ -181,11 +180,28 @@ function addRandomSalaryInfo(teachers) {
   });
   console.log(teachers)
 }
+// addRandomSalaryInfo(teachers)
 
-addRandomSalaryInfo(teachers)
 
 /*
 Assignment 3
 Copy and update your BubbleSort implementation, 
 so it can sort the teachers array in the previous assignment. Sort it by name.
 */
+function bubbleSort(teachers) {
+    // Loops through the entire array
+    for (i=0; i<teachers.length; i++){
+        for (j=0; j<teachers.length; j++) {
+            // Checks if the current value is higher than the next value
+            teachers.sort(function(a, b) {
+                if(a.name < b.name) { return -1; }
+                if(a.name > b.name) { return 1; }
+                return 0
+            })
+        }
+    }
+    return teachers;
+  }
+
+console.log(bubbleSort(teachers))
+  
