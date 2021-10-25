@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programming basics - template</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Programming basics - template</h1>
+    <p>Please open your console</p>
+
+    <!-- 
+Assignment 2
+
+**In HTML**
+1. Create a form with 2 input elements and a button.
+2. Create a table head with product and price as two columns. Also create an empty table body.
+3. Create an empty div for the total price 
+-->
+
+    <div class="cartInput">
+        <form action="" id="productForm">
+            <input type="text" name="productName" id="productName" placeholder="Product">
+            <input type="text" name="productPrice" id="productPrice" placeholder="10">
+            <input type="submit" id="submitButton" value="Submit">
+        </form>
+    </div>
+
+    <br>
+
+    <div id="cart">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cartTotal">
+        <p>Total price: <span id="price">0</span></p>
+    </div>
+
+    <script src="./assets/js/webshop.js"></script>
+</body>
+
+</html>
